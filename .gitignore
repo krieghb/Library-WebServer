@@ -1,0 +1,26 @@
+/target/
+
+#  All class files
+*.class
+.classpath
+.project
+.settings/
+
+.metadata/
+
+#  Package Files
+*.jar
+*.war
+*.ear
+
+
+#  Eclipse Files
+*.metadata
+
+
+#  IntelliJ Files
+*.idea
+*.iml
+
+
+Library-View/app/styles/ca-styles/*
