@@ -35,23 +35,23 @@ public class BookBusiness {
         BookModel retBook = findBook( id );
 
 
-        Map mapBook = new HashMap( getBookMap( retBook ) );
+//        Map mapBook = new HashMap( getBookMap( retBook ) );
 //        mapBook.put("Book ID", retBook.getBookID());
 //        mapBook.put("Title", retBook.getTitle());
 //        mapBook.put("Author", retBook.getAuthor());
 //        mapBook.put("Publication Date", retBook.getReleaseDate());
 //        mapBook.put("Keywords", retBook.getKeywords());
 
-        return mapBook;
+        return new HashMap( getBookMap( retBook ) );
     }
 
 
     public BookModel getBook( int id ) {
         logger.info( "Getting a book by ID: " + id + "and returning Book");
 
-        BookModel retBook = findBook( id );
+//        BookModel retBook = findBook( id );
 
-        return retBook;
+        return findBook( id );
     }
 
 
@@ -80,10 +80,10 @@ public class BookBusiness {
     public BookModel updateBook( int bookID ) {
         logger.info( "Updating a book by ID: " + bookID + "and returning Book");
 
-        BookModel book = findBook( bookID );
+//        BookModel book = findBook( bookID );
 
 
-        return book;
+        return findBook( bookID );
     }
 
 
@@ -101,7 +101,7 @@ public class BookBusiness {
     public Map getBookMap( BookModel book ) {
         Map returnBook = new HashMap();
 
-        returnBook.put( "Book ID",book.getBookID() );
+        returnBook.put( "Book ID", book.getBookID() );
         returnBook.put( "Title", book.getTitle() );
         returnBook.put( "Author", book.getAuthor() );
         returnBook.put( "Publication", book.getReleaseDate() );

@@ -82,14 +82,10 @@ public class BookController {
 
 
     @RequestMapping( value = "/library/books/{id}", produces = "application/json", method = RequestMethod.GET )
-    public @ResponseBody Map<String, String> getABook( @PathVariable( "id" ) int id ) {
+    public @ResponseBody Map getABook( @PathVariable( "id" ) int id ) {
         logger.info("Getting a single book ( getABook() )");
 
-        Map<String, String> retResult = new HashMap<String, String>();
-
-        retResult = allBooks.getABook( id );
-
-        return retResult;
+        return allBooks.getABook( id );
     }
 
 
@@ -97,9 +93,7 @@ public class BookController {
     public @ResponseBody List<BookModel> getAllBooks() {
         logger.info("Getting all books in library ( getAllBooks() )");
 
-        List<BookModel> listBooks = allBooks.getAllBooks();
-
-        return listBooks;
+        return allBooks.getAllBooks();
 
     }
 
