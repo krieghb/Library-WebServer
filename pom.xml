@@ -11,6 +11,7 @@
     <modules>
         <module>Library-Controller</module>
         <module>Library-Model</module>
+        <module>Library-Server</module>
     </modules>
 
 

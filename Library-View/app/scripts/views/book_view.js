@@ -26,7 +26,8 @@ app.BookView = Backbone.View.extend({
 
     deleteBook: function() {
         //  Delete the model.
-        this.model.destroy();
+        this.model.destroy({wait: true});
+
 
         //  Delete the view.
         this.remove();

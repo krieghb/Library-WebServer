@@ -9,10 +9,13 @@ app.LibraryView = Backbone.View.extend({
     el: '#books',
 
     initialize: function( initialBooks) {
-        this.collection = new app.Library( initialBooks );
+        //this.collection = new app.Library( initialBooks );
+        this.collection = new app.Library();
+        this.collection.fetch( { reset: true } );
         this.render();
 
         this.listenTo( this.collection, 'add', this.renderBook );
+        this.listenTo( this.collection, 'reset', this.render );
     },
 
     //  render library by rendering each book in its collection.
@@ -42,14 +45,39 @@ app.LibraryView = Backbone.View.extend({
 
         var formData = {};
 
-        $('#addBook div').children( 'input').each( function( i, el ) {
+        $( '#addBook div' ).children( 'input' ).each( function( i, el ) {
 
             if ( $(el).val() != '' ) {
-                formData[ el.id ] = $(el).val();
-            }
-        });
+                console.log("HI Everybody!");
+                if (el.id === 'keywords') {
+                    console.log("In Keywords now!");
+                    //formData[el.id] = [];
+                    //_.each($(el).val().split(' '), function (keyword) {
+                    //    formData[el.id].push({'keyword': keyword});
+                    //});
+                    formData[el.id] = "Keyword: " + $(el).val();
+                }
+                else if (el.id === 'releaseDate') {
+                    console.log("In releaseDate now!");
+                    formData[el.id] = $('#releaseDate').datepicker('getDate').getTime();
+                }
+                else {
+                    console.log("Everywhere else now!");
+                    formData[el.id] = $(el).val();
+                }
 
-        this.collection.add( new app.Book( formData ) );
+            }
+
+            //  Clearing input field value.
+            $(el).val('');
+        });
+        //var url = this.collection.url;
+        //this.collection.add( new app.Book( formData ) );
+        //this.collection.url = this.collection.url + "/create";
+
+        this.collection.create( formData  );
+
+        //this.collection.url = url;
 
     }
 

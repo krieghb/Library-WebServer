@@ -1,5 +1,8 @@
+@charset "utf-8";
+
 body {
-    background-color: #eee;
+    //background-color: #eee;
+    background-color: hotpink;
 }
 
 /*div {*/
@@ -19,6 +22,7 @@ body {
 
 /*}*/
 
+
 .bookContainer {
     outline: 1px solid #aaa;
     /*border: 1px solid #aaa;*/
@@ -27,10 +31,6 @@ body {
     background-color: #fff;
     float: left;
     margin: 5px;
-    border-left: 10px blue double;
-    border-top: 10px black double;
-    border-right: 10px green double;
-    border-bottom: 10px red dashed;
 }
 .bookContainer img {
     float: left;

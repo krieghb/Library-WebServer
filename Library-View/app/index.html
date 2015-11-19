@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Backbone Library Example</title>
-    <link rel="stylesheet" href="styles/krieghb/screen.css">
-    <link rel="stylesheet" href="styles/krieghb/backup.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
     <!--  ====================================================================================================  -->
     <!--  ====================                      New Book Form                         ====================  -->
     <!--  ====================================================================================================  -->
-    <div id="books">
-        <form id="addBook" action="#">
-            <div>
-                <label for="coverImage">CoverImage:  </label>
-                <input id="coverImage" type="file" />
-                <label for="title">Title:  </label>
-                <input id="title" type="text" />
-                <label for="author">Author:  </label>
-                <input id="author" type="text" />
-                <label for="releaseDate">Release Date:  </label>
-                <input id="releaseDate" type="text" />
-                <label for="keywords">Keywords:  </label>
-                <input id="keywords" type="text" />
-                <button id="add">Add Book</button>
+    <div id="main">
+        <div id="books">
+            <form id="addBook" action="#">
+                <div>
+                    <label for="coverImage">CoverImage:  </label>
+                    <input id="coverImage" type="file" />
+                    <label for="title">Title:  </label>
+                    <input id="title" type="text" />
+                    <label for="author">Author:  </label>
+                    <input id="author" type="text" />
+                    <label for="releaseDate">Release Date:  </label>
+                    <input id="releaseDate" type="text" />
+                    <label for="keywords">Keywords:  </label>
+                    <input id="keywords" type="text" />
+                    <button id="add">Add Book</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div id="search_div">
+                <label for="searchLbl">Search</label>
+                <input id="searchLbl" type="text" />
             </div>
-        </form>
+        </div>
     </div>
 
 
     <!--<div class="bookContainer">-->
-        <!--<img src="img/placeholder.png" />-->
+        <!--<img src="images/placeholder.png" />-->
         <!--<ul>-->
             <!--<li>Title</li>-->
             <!--<li>Author</li>-->
@@ -62,9 +69,14 @@
     <!--  ====================                         "Includes"                         ====================  -->
     <!--  ====================================================================================================  -->
 
-    <script src="../../resources/javascript/libraries/jquery-2.1.4.js"></script>
-    <script src="../../resources/javascript/libraries/underscore/underscore-min.js"></script>
-    <script src="../../resources/javascript/libraries/backbone/backbone-min.js"></script>
+    <!--<script src="../../resources/javascript/libraries/jquery-2.1.4.js"></script>-->
+    <!--<script src="../../resources/javascript/libraries/underscore/underscore-min.js"></script>-->
+    <!--<script src="../../resources/javascript/libraries/backbone/backbone-min.js"></script>-->
+    <!--<script src="../../resources/javascript/libraries/backbone/backbone.js"></script>-->
+    <script src="scripts/lib/jquery-2.1.4.js"></script>
+    <script src="scripts/lib/underscore/underscore-min.js"></script>
+    <script src="scripts/lib/backbone/backbone-min.js"></script>
+    <script src="scripts/lib/jquery-ui.min.js"></script>
 
     <script src="scripts/models/book.js"></script>
     <script src="scripts/collections/library.js"></script>

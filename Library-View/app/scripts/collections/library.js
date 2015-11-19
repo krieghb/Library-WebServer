@@ -6,6 +6,8 @@ var app = app || {};
 
 app.Library = Backbone.Collection.extend({
 
-    model: app.Book
+    model: app.Book,
+    url: 'http://localhost:8180/library/books'
+    //url: '/library/books'
 
 });
